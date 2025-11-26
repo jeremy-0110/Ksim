@@ -69,7 +69,6 @@ def select_random_start_index(data: pd.DataFrame) -> tuple[int, int] | None:
     sim_start_index = start_view_index + VIEW_DAYS
     
     return start_view_index, sim_start_index
-
 #根據索引取得價格資訊，並強制將日期轉換為 Python 原生 datetime 物件。
 def get_price_info_by_index(data: pd.DataFrame, index: int) -> tuple[datetime, float, float]:
     if data is not None and index < len(data):
@@ -91,4 +90,3 @@ def get_price_info_by_index(data: pd.DataFrame, index: int) -> tuple[datetime, f
         
         return date, open_price, close_price
     return datetime.now(), 0.0, 0.0
-
